@@ -1,0 +1,8 @@
+.Comment {
+    padding-bottom: 40px;
+    border-bottom: 10px solid #000;
+}
+
+.Comment-date {
+    font-size: 48px;
+}
