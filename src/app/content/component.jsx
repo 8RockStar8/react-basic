@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Comment from './comment';
+import Clock from './clock';
 
 import './component.css';
 
@@ -13,12 +14,34 @@ const comment = {
     },
 };
 
-function Content() {
-    return(
-        <div className='content-place'>
-            <Comment user={comment} />
-        </div>
-    )
+class Content extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isClockShow: false,
+            isShowText: true
+        }
+    }
+
+    hideShowClock = () => {
+        this.setState({
+            isClockShow: !this.state.isClockShow,
+            isShowText: !this.state.isShowText
+        });
+    }
+
+    render() {
+        return (
+            <div className='content-place'>
+                <button onClick={this.hideShowClock} className='btn'>
+                    {this.state.isShowText === true ? 'Show Clock' : 'Show Comment'}
+                </button>
+                {
+                    this.state.isClockShow === true ? <Clock /> : <Comment user={comment} />
+                }
+            </div>
+        )
+    }
 }
 
 export default Content;
