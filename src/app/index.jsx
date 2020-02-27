@@ -1,11 +1,10 @@
-import React from 'react';
+import React from  'react';
+import Header from './sections/header';
+import Content from './sections/content'
+import Footer from './sections/footer';
 
-import Header from './header';
-import Content from './content';
-import Footer from './footer';
- 
-function App() {
-    return (
+function App(){
+    return(
         <div>
             <Header />
             <Content />

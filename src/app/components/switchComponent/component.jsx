@@ -1,25 +1,23 @@
 import React from 'react';
 
-import Comment from './comment';
-import Clock from './clock';
-
-import './component.css';
+import Clock from './../clock';
+import Comment from './../comment';
 
 const comment = {
     date: new Date(),
     text: 'I hope you enjoy learning React!',
     author: {
         name: 'Hello Kitty',
-        avatarUrl: 'https://placekitten.com/g/200/200',
+        avatarUrl: 'https://placekitten.com/g/150/150',
     },
 };
 
-class Content extends React.Component {
+class SwitchComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isClockShow: false,
-            isShowText: true
+            isShowText: true,
         }
     }
 
@@ -31,9 +29,9 @@ class Content extends React.Component {
     }
 
     render() {
-        return (
-            <div className='content-place'>
-                <button onClick={this.hideShowClock} className='btn'>
+        return(
+            <div>
+                <button onClick={this.hideShowClock} style={styles.btn}>
                     {this.state.isShowText === true ? 'Show Clock' : 'Show Comment'}
                 </button>
                 {
@@ -44,4 +42,20 @@ class Content extends React.Component {
     }
 }
 
-export default Content;
+const styles = {
+    btn: {
+        display: 'block',
+        width: '200px',
+        height: '40px',
+        margin: '10px auto',
+        backgroundColor: 'darkcyan',
+        color: '#fff',
+        fontSize: '22px',
+        cursor: 'pointer',
+        outline: 'none',
+        border: 'none',
+        borderRadius: '10px',
+    }
+}
+
+export default SwitchComponent;

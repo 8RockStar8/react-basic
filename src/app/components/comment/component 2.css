@@ -1,11 +1,11 @@
-.content-place {
-    width: 100%;
-    min-height: calc(100vh - 270px);
-    height: auto;
-    margin-top: 70px;
-    background-color: #b6d784;
+.Comment {
+    padding-bottom: 40px;
+    border-bottom: 10px solid #000;
 }
 
+.Comment-date {
+    font-size: 48px;
+}
 .btn {
     display: block;
     width: 200px;

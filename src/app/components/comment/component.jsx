@@ -1,12 +1,13 @@
 import React from 'react';
 
-import UserInfo from './userInfo';
+import UserInfo from '../userInfo';
 
 import './component.css';
 
 function formatDate(date) {
-    return date.toLocaleDateString();
-}
+    let met = date.toLocaleDateString();
+    return met
+} 
 
 class Comment extends React.Component {
     constructor(props) {
@@ -16,15 +17,14 @@ class Comment extends React.Component {
         }
     }
 
-    inch = (num) => {
+    foo = (num) => {
         let met = num.map((item, index) => {
             return (
-                <li key={index} className='esimInch'>
+                <li key={index} >
                     <span>{item}</span>
                 </li>
             )
-        })
-        console.log(met);
+        });
         return met
     }
 
@@ -39,9 +39,10 @@ class Comment extends React.Component {
                     {formatDate(this.props.user.date)}
                 </div>
                 <ul>
-                    {this.inch(this.state.numbers)}
+                    {this.foo(this.state.numbers)}
                 </ul>
             </div>
+       
         );
     }
 }
