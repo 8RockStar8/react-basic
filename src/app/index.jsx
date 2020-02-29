@@ -1,15 +1,17 @@
 import React from  'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+ 
 import Header from './sections/header';
 import Content from './sections/content'
 import Footer from './sections/footer';
 
 function App(){
     return(
-        <div>
+        <Router>
             <Header />
             <Content />
             <Footer />
-        </div>
+        </Router>
     )
 }
 
